@@ -1,0 +1,59 @@
+// Main
+$BITwhite: #FFFFFF;
+$BITgray: #F0F0F0;
+$BITprimary: #000563;
+$BITsecondary: #3A326B;
+$BITtertiary: #333782;
+$BITaccentPink: #EE5965;
+$BITaccentGreen: #57BE8E;
+$BITaccentBlue: #33C1D3;
+
+//Homepage
+
+//Editor
+
+// Side Menu
+$SMsliderThumb: #1A2B82;
+$SMsliderHover: #576CD9;
+$SMtextColor: #A6AFDF;
+$SMtitleColor: $BITprimary;
+$SMlineColor: $BITprimary;
+$SMdescColor: #58585A;
+$SMinputHover: #576CD9;
+
+// Colors
+$orange: #F5BD00;
+$pink: #FF7AD2;
+$purple: #8444B2;
+$green: #57BE8E;
+
+// Fonts
+@font-face {
+    font-family: Merriweather;
+    src: url('../fonts/MerriweatherSans-Medium.ttf');
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('../fonts/ProximaNova-Regular.otf');
+}
+
+@font-face {
+    font-family: ProximaNovaBold;
+    src: url('../fonts/ProximaNova-Bold.otf');
+}
+
+@font-face {
+    font-family: ProximaNovaBlack;
+    src: url('../fonts/ProximaNova-Black.otf');
+}
+
+@font-face {
+    font-family: BITFont;
+    src: url('../fonts/IBMPlexMono-Medium.ttf');
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url('../fonts/Raleway-Variable.ttf');
+}

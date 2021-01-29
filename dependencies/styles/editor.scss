@@ -1,0 +1,1355 @@
+@import "_variable";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scroll-behavior: smooth;
+    
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+}
+
+@keyframes delete-account-warning {
+0% {
+    transform: translate(1px, 1px) rotate(0deg);
+}
+
+10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+}
+
+20% {
+    transform: translate(-3wpx, 0px) rotate(1deg);
+}
+
+30% {
+    transform: translate(3px, 2px) rotate(0deg);
+}
+
+40% {
+    transform: translate(1px, -1px) rotate(1deg);
+}
+
+50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+}
+
+60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+}
+
+70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+}
+
+80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+}
+
+90% {
+    transform: translate(1px, 2px) rotate(0deg);
+}
+
+100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+}
+}
+
+em {
+    font-style: normal ;
+}
+
+input, textarea, select { 
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+//
+// 𝗧𝗼𝗮𝘀𝘁
+//
+
+#saveIndicator {
+    top: 0;
+    right: 0;
+    padding: 10px;
+    position: absolute;
+    z-index: 50000;
+}
+
+#page_saved {
+    display: block;
+}
+
+#page_saving {
+    display: none;
+}
+
+.pageInditcator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p{
+        margin: 0 0 0 5px;
+        font-family: Merriweather;
+        color: #A6AFDF;
+        font-size: 12px;
+    }
+}
+
+.swal2-popup {
+    font-family: Roboto;
+}
+
+.optionList {
+    padding-left: 10px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.option {
+    background-color: transparent;
+}
+
+
+
+
+#toastBarWrap {
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 3000;
+}
+
+#toastBar {
+    padding: 10px 10px 0 0;
+    width: max-content;
+    height: 100%;
+}
+
+@keyframes fadeOut {
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.toastItem {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px 0 5px 0;
+    width: 300px;
+    height: max-content;
+    animation: fadeOut 8s forwards;
+    border-radius: 8px;
+
+    i {
+        padding: 0 15px;
+        font-size: 30px;
+        color: #FFF;
+    }
+
+    div:first-child {
+        text-align: center;
+        color: #FFF;
+    }
+
+    div:last-child {
+        padding: 10px 10px 10px 0;
+        color: #FFF;
+    }
+
+    p:first-child {
+        margin: 0;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    p:last-child {
+        margin: 0;
+        font-size: 15px;
+    }
+}
+
+.toastSucces {
+    background-color: $green;
+}
+
+.toastWarn {
+    background-color: $BITaccentBlue;
+}
+
+.toastError {
+    background-color: $BITaccentPink;
+}
+
+.toastItem:first-child {
+    margin: 0 0 5px 0 !important;
+}
+
+//
+// 𝗦𝗶𝗱𝗲𝗠𝗲𝗻𝘂
+//
+#sideMenu {
+    padding: 0 0 50px 0;
+    transition: 0.5s;
+    top: 50px;
+    position: fixed;
+    height: calc(100% - 50px);
+    background-color: $BITprimary;
+    transition: 0.2s;
+    z-index: 10000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $SMsliderThumb;
+
+        &:hover {
+            background: $SMsliderHover;
+        }
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}
+
+.SM-settingContainer {
+    margin-right: 15px;
+    flex-direction: column;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid rgba(166, 175, 223, 0.2);
+}
+
+.SM-settingOption {
+    padding: 10px 55px 10px 0;
+    margin: 5px 0 5px 15px;
+    align-items: center;
+    display: flex;
+    border-radius: 5px;
+    color: $SMtextColor !important;
+    transition: ease 0.1s;
+}
+
+.SM-hoverable:hover {
+    color: $BITwhite !important;
+    background-color: $BITtertiary !important;
+    cursor: pointer;
+}
+
+.SM-header {
+    display: flex;
+    margin-right: auto;
+    padding: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-family: Merriweather;
+
+    i {
+        padding: 0 15px 0 15px;
+    }
+}
+
+.SM-headerFixed i {
+    padding: 0 15px 0 4px;
+}
+
+.SM-sticky {
+    position: sticky;
+    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    background-color: $BITprimary;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.SM-sticky .SM-input {
+    width: unset;
+}
+
+.SM-title {
+    padding-right: 15px;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.SM-addButton {
+    float: left;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 10px;
+    font-family: Merriweather;
+    font-weight: 500;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    font-size: 12px;
+    background-color: $BITsecondary;
+    color: #FFF;
+    cursor: pointer;
+
+    i {
+        padding: 0;
+    }
+
+    &:hover {
+        background-color: #5abf8f;
+        color: #fff;
+    }
+}
+
+.SM-removeButton {
+    float: left;
+    outline: none;
+    border: none;
+    margin: 0 0 0 8px;
+    padding: 10px;
+    font-family: Merriweather;
+    font-weight: 500;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    font-size: 12px;
+    background-color: $BITsecondary;
+    color: #FFF;
+    cursor: pointer;
+
+    i {
+        padding: 0;
+    }
+
+    &:hover {
+        background-color: $BITaccentPink;
+        color: #fff;
+    }
+}
+
+.SM-buttonMaxWidth {
+    margin-bottom: 5px;
+    padding: 13.5px 0 13.5px 15px !important;
+    background-color: $BITtertiary;
+    justify-content: flex-start;
+    color: $SMtextColor;
+    width: 100%;
+    font-size: 13px;
+
+    i {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+}
+
+.SM-settingContainer {
+    &:first-child {
+        border-bottom: none !important;
+    }
+
+    &:last-child {
+        padding: 10px 0 0 0;
+        border-bottom: none !important;
+    }
+}
+
+.SM-settingContainerInputs {
+    padding: 0 !important;
+}
+
+.SM-inputContainer {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.SM-inputOption {
+    padding: 0;
+    margin: 0 15px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    color: $SMtextColor !important;
+    transition: ease 0.1s;
+}
+
+.SM-form {
+    margin-bottom: 45px !important;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+        margin-bottom: 10px !important;
+    }
+}
+
+.SM-Fix {
+    padding: 10px 0 10px 0;
+}
+
+.SM-formLine .SM-settingOption {
+    border-radius: 0 5px 5px 0;
+}
+
+.SM-input {
+    width: 100%;
+    margin: 20px 15px;
+    background-color: $BITtertiary;
+
+    &:hover {
+        background-color: $SMinputHover;
+    }
+
+    i {
+        padding: 0 15px;
+    }
+
+    input {
+        background-color: transparent;
+        border: none;
+        padding: 3px;
+        font-family: Merriweather;
+        font-size: 13px;
+        width: 100%;
+        color: $BITwhite;
+    }
+
+    p {
+        margin: 0 0 0 15px;
+        background-color: transparent;
+        border: none;
+        font-family: Merriweather;
+        font-size: 13px;
+        color: $BITwhite;
+    }
+
+    textarea {
+        background-color: transparent;
+        border: none;
+        padding: 3px;
+        font-family: Merriweather;
+        resize: none;
+        height: 85px !important;
+        font-size: 13px;
+        width: 100%;
+        color: $BITwhite;
+    }
+
+    input::placeholder {
+        color: $SMtextColor;
+    }
+}
+
+.SM-textInput {
+    margin: 5px 15px;
+
+    &:first-child {
+        margin: 0 15px 5px 15px !important;
+    }
+
+    &:last-child {
+        margin: 5px 15px 0 15px !important;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        margin: 0 10px;
+    }
+}
+
+input[type=file] {
+    width: 250px;
+    overflow: hidden;
+}
+
+.SM-button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+    font-family: Merriweather !important;
+    font-weight: 500 !important;
+    font-size: 15px;
+    background-color: $BITtertiary;
+    cursor: pointer;
+
+    i {
+        padding: 0 8px 0 0;
+    }
+
+    &:hover {
+        background-color: $BITaccentGreen;
+        color: $BITwhite !important;
+    }
+}
+
+.toggleSwitch {
+    top: -10px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked~.toggle {
+            background-color: $BITaccentGreen;
+
+            &:after {
+                left: 21px;
+            }
+        }
+    }
+
+    .toggle {
+        position: absolute;
+        height: 20px;
+        width: 40px;
+        border-radius: 25px;
+        background-color: $BITsecondary;
+        transition: background-color 0.15s ease-in;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            width: 19px;
+            height: 19px;
+            border-radius: 25px;
+            background: $BITwhite;
+            transition: left 0.15s ease-in;
+        }
+    }
+}
+
+//
+// 𝗦𝗶𝗱𝗲𝗠𝗲𝗻𝘂 𝗘𝘅𝘁𝗲𝗻𝘁𝗶𝗼𝗻𝘀
+//
+
+.fa-th-list {
+    transform: rotate(-90deg);
+}
+
+.smallerPreview {
+    margin: -300px 0 !important;
+}
+
+.biggerPreview {
+    margin: 25px 0 0 0 !important;
+}
+
+.smallerPreviewFooter {
+    margin-top: 114px;
+}
+
+.smallerPreviewTopbar {
+    margin-top: -136px !important;
+}
+
+.smallerPreviewTopbar2 {
+    margin: -300px 0 -470px 0 !important;
+}
+
+//
+// 𝗧𝗼𝗽𝗯𝗮𝗿
+//
+#page_topbar_editor {
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: $BITprimary;
+    z-index: 300;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.page-button {
+    margin: 0 10px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    height: max-content;
+    border-radius: 5px;
+    color: $BITwhite;
+    transition: ease 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        color: $BITwhite;
+    }
+
+    &:active {
+        color: $BITaccentGreen;
+    }
+
+    i {
+        font-size: 20px;
+    }
+
+    p {
+        margin: 0;
+        font-family: BIT-Font, monospace;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+}
+
+#page_logo_small {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    z-index: -1;
+    cursor: pointer;
+
+    img {
+        height: 80%;
+        z-index: -1;
+    }
+}
+
+#page_buttons {
+    margin-left: 25px;
+    display: flex;
+}
+
+//
+// 𝗢𝘃𝗲𝗿𝗹𝗮𝘆 𝗡𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻
+//
+
+#screenSizeNotification {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999999;
+}
+
+#screenSizeNotification_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: $BITwhite;
+
+    i {
+        font-size: 80px;
+    }
+
+    p {
+        padding: 0 50px;
+        text-align: center;
+        font-family: Merriweather;
+        font-weight: 500;
+        font-size: 35px;
+    }
+}
+
+//
+// 𝗖𝗩 𝗣𝗮𝗴𝗲
+//
+
+#page_content {
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: max-content !important;
+    z-index: 100;
+    overflow-x: scroll;
+}
+
+#page_content {
+    flex-direction: column;
+    align-items: center;
+}
+
+//
+// 𝗖𝗩 𝗖𝗼𝗻𝘁𝗲𝗻𝘁
+//
+
+.CV {
+    margin: auto;
+}
+
+.CV {
+    margin: 50px;
+    width: 21cm;
+    min-width: 21cm;
+    height: 256mm;
+    min-height: 29.7cm;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.CV-content {
+    height: 100%;
+}
+
+.CVS-header {
+    display: flex;
+    height: 15%;
+    width: 100%;
+}
+
+#CVC_lable {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 75px;
+    height: 142px;
+    min-width: 122px;
+    width: max-content;
+    background-color: $BITprimary;
+
+    p {
+        padding-bottom: 18px;
+        margin: 0;
+        color: #fff;
+        font-size: 32px;
+        font-family: Merriweather;
+        font-weight: 800;
+    }
+}
+
+.CVC-hover:hover {
+    background-color: rgba(51, 143, 196, 0.8);
+    box-shadow: inset 0px 0px 0px 3px rgba(57, 60, 222, 0.53);
+    cursor: pointer;
+}
+
+#overheid {
+    width: 80px;
+    display: none;
+}
+
+#CVC_BITLogo {
+    height: 80px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 142px;
+
+    img {
+        height: 55px;
+    }
+}
+
+#CVC_lableIMG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 75px;
+    margin-left: auto;
+    height: 142px;
+    min-width: 122px;
+    width: max-content;
+    overflow: hidden;
+
+    div {
+        width: 100px;
+        height: 100px;
+        border-radius: 15%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+#CVS-personal {
+    padding: 0 60px 25px 60px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+#CVC_personal {
+    border-collapse: separate;
+    border-spacing: 15px 0;
+}
+
+td {
+    &:nth-child(1) {
+        color: $SMtitleColor;
+        font-family: Merriweather;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &:nth-child(2) {
+        color: $SMdescColor;
+        font-family: Merriweather;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+#inputS1-1L {
+    margin-right: 5px;
+}
+
+#CVS-workExperience {
+    height: max-content;
+    width: 100%;
+}
+
+#CVC_workExperience {
+    padding: 15px 73px;
+    display: flex;
+    align-items: flex-start;
+    font-family: Merriweather;
+}
+
+.CVC-workExperienceInfo {
+    em {
+        &:nth-child(1) {
+            padding-right: 5px;
+            font-style: normal;
+        }
+
+        &:nth-child(2) {
+            padding-left: 5px;
+            font-style: normal;
+        }
+    }
+
+    p {
+        padding-right: 50px;
+        margin: 0;
+        font-weight: 800;
+        font-size: 14px;
+    }
+}
+
+.CVC-bedrijf {
+    margin: 0;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.CVC-functie {
+    margin: 0;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+#CVS-educatie {
+    height: max-content;
+    width: 100%;
+}
+
+#CVC_educatie {
+    padding: 15px 73px;
+    display: flex;
+    align-items: flex-start;
+    font-family: Merriweather;
+}
+
+.CVC-educatieInfo p {
+    padding-right: 50px;
+    margin: 0;
+    font-weight: 800;
+    font-size: 14px;
+
+    em {
+        &:nth-child(1) {
+            padding-right: 5px;
+            font-style: normal;
+        }
+
+        &:nth-child(2) {
+            padding-left: 5px;
+            font-style: normal;
+        }
+    }
+}
+
+#inputS6-1-2L {
+    width: 275px;
+    height: 150px;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#inputS6-2-2L {
+    width: 275px;
+    height: 150px;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.CVC-instituut {
+    margin: 0;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.CVC-opleiding {
+    margin: 0;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+#CVS-skills {
+    height: 200px;
+    width: 100%;
+}
+
+#CVC_skillChart {
+    position: relative;
+    margin-left: 160px;
+    top: -20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#CVC_skillChartInnerWrap {
+    padding: 10px 50px;
+    display: flex;
+    width: 250px;
+    height: 190px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#CVC_skillChartWrap {
+    width: 335px !important;
+    height: 335px !important;
+    display: inline-block;
+    position: relative;
+    display: inline-block;
+    width: 335px !important;
+    height: 335px !important;
+    max-width: 1600px;
+    max-width: 1600px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#CVS-workspace {
+    margin-top: 72px;
+    height: max-content;
+    width: 100%;
+}
+
+textarea {
+    background-color: transparent;
+    border: none;
+    padding: 3px;
+    font-family: Merriweather;
+    resize: none;
+    height: 85px !important;
+    font-size: 13px;
+    width: 100%;
+    color: #000;
+    overflow: hidden;
+}
+
+textarea::placeholder {
+    color: $SMtextColor;
+}
+
+#CVC_tools {
+    max-height: max-content;
+    margin: 30px 0 30px 72px;
+    display: flex;
+    align-items: center;
+
+    i {
+        width: 53px;
+        height: max-content;
+        padding: 12px 5px;
+        font-size: 30px;
+        border: 4px solid $SMtitleColor;
+        text-align: center;
+    }
+}
+
+.CVC-smallText {
+    margin-right: 72px;
+}
+
+.CVC-times {
+    padding: 0 5px;
+    margin: 0;
+    font-size: 40px;
+    background-color: darkorange;
+}
+
+#CVC_projects {
+    display: flex;
+    align-items: center;
+    font-family: Merriweather;
+    font-weight: 800;
+    font-size: 30px;
+    margin: 30px 72px 50px 72px;
+}
+
+.CVC-project {
+    margin-right: auto;
+
+    p {
+        margin: 0 0 5px 0;
+        font-family: Merriweather;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+}
+
+.SM-projectsIMG {
+    width: 150px;
+}
+
+.CV-dualSection {
+    display: flex;
+}
+
+#CVS-hobbies {
+    height: max-content;
+    width: 100%;
+}
+
+#CVS-links {
+    height: max-content;
+    width: 100%;
+}
+
+.CVC-itemBar {
+    margin: 15px 73px;
+    display: flex;
+    align-items: center;
+
+    i {
+        width: 43px;
+        margin-right: 8px;
+        padding: 12px 5px;
+        font-size: 20px;
+        border: 4px solid $SMlineColor;
+        text-align: center;
+    }
+
+    p {
+        font-family: Merriweather;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+.CVC-header {
+    display: flex;
+    align-items: flex-end;
+    height: max-content;
+    width: 100%;
+    font-family: Merriweather;
+}
+
+.CVC-numberBlock {
+    margin: 0 10px 0 0;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 43px;
+    height: 43px;
+    font-weight: 800;
+    font-size: 16px;
+    color: $BITwhite;
+    letter-spacing: 2px;
+}
+
+.CVC-title {
+    padding: 0 0 3px;
+    width: max-content;
+    border-bottom: 3px solid $SMlineColor;
+    text-transform: uppercase;
+    color: $SMtitleColor;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+// .SM-formLine {
+//     border-left: 5px solid;
+// }
+
+// .SM-formLine:nth-child(1) {
+//     border-left: 5px solid $green;
+// }
+
+// .SM-formLine:nth-child(2) {
+//     border-left: 5px solid $orange;
+// }
+
+// .SM-formLine:nth-child(3) {
+//     border-left: 5px solid $BITaccentPink;
+// }
+
+.choosableIcon{
+    width: 30px;
+    height: 30px;
+    border:2px solid red;
+}
+
+// .CV {
+//     animation: delete-account-warning 0.5s;
+//     animation-iteration-count: infinite;
+// }
+
+#loginBlur {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 9999999999999999999999999;
+}
+
+#loginWrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#loginLogoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+#loginLogoContainer img {
+    padding: 0;
+}
+
+.logoBit {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.logoSwap {
+    margin: 0 50px;
+    width: 45px !important;
+    height: 45px !important;
+}
+
+.logoCVG {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.loginContainer:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background-color: $BITwhite;
+}
+
+.loginContainer:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: $BITprimary;
+}
+
+.loginContainer img {
+    padding: 50px 50px 60px 50px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+#loginEmail, #loginPassword {
+    padding: 10px;
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+
+#loginSubmit {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $BITprimary;
+    color: #FFF;
+}
+
+#loginSubmit:hover {
+    cursor: pointer;
+    background-color: $BITaccentBlue;
+    color: #FFF;
+}
+
+#loginSubmit:focus {
+    cursor: pointer;
+    background-color: $BITtertiary;
+    color: #FFF;
+}
+
+.testtest {
+    position: relative;
+    width: 60%;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,.75);
+}
+
+.testtest:first-child {
+    margin: 0 0 25px 0;
+}
+
+.loginlable {
+    padding: 2px 5px 0 5px;
+    top: -25px;
+    left: 5px;
+    position: absolute;
+    font-size: 13px;
+    background-color: #FFF;
+}
+
+//
+// @Media Responsive
+//
+@media print {
+    #page_content {
+        padding: 0;
+        margin: 0;
+    }
+
+    .CV:first-child {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        background-color: chartreuse;
+    }
+
+    .CV:last-child {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 1125px;
+        box-shadow: none;
+        background-color: palevioletred;
+    }
+
+    .CV-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    #printPage {
+        page-break-after: always;
+    }
+
+    #printPage2 {
+        page-break-after: always;
+    }
+
+    @page {
+        margin: 0;
+    }
+}
+
+@media (max-width: 894px) {
+    #page_content+#page_topbar_editor {
+        display: none !important;
+    }
+
+    #screenSizeNotification {
+        display: block !important;
+    }
+
+    #page_content::-webkit-scrollbar {
+        width: 0 !important;
+    }
+}

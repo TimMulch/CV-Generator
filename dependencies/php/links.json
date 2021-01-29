@@ -1,0 +1,55 @@
+{
+    "links": [
+        { "id":"inputS1-1", "db-table-name":"personal", "db-item-name":"firstName"},
+        { "id":"inputS1-2", "db-table-name":"personal", "db-item-name":"lastName" },
+        { "id":"inputS1-3", "db-table-name":"personal", "db-item-name":"adress" },
+        { "id":"inputS1-4", "db-table-name":"personal", "db-item-name":"zipcode" },
+        { "id":"inputS1-5", "db-table-name":"personal", "db-item-name":"city" },
+        { "id":"inputS1-6", "db-table-name":"personal", "db-item-name":"phoneNumber" },
+        { "id":"inputS1-7", "db-table-name":"personal", "db-item-name":"email" },
+        { "id":"inputS1-8", "db-table-name":"personal", "db-item-name":"dayOfBirth" },
+        { "id":"inputS1-9", "db-table-name":"personal", "db-item-name":"nationality" },
+
+        { "id":"inputS2-1-1", "db-table-name":"workexperience", "db-item-name":"workStartDate1" },
+        { "id":"inputS2-1-2", "db-table-name":"workexperience", "db-item-name":"workEndDate1" },
+        { "id":"inputS2-1-3", "db-table-name":"workexperience", "db-item-name":"company1" },
+        { "id":"inputS2-1-4", "db-table-name":"workexperience", "db-item-name":"jobDescription1" },
+        { "id":"inputS2-2-1", "db-table-name":"workexperience", "db-item-name":"workStartDate2" },
+        { "id":"inputS2-2-2", "db-table-name":"workexperience", "db-item-name":"workEndDate2" },
+        { "id":"inputS2-2-3", "db-table-name":"workexperience", "db-item-name":"company2" },
+        { "id":"inputS2-2-4", "db-table-name":"workexperience", "db-item-name":"jobDescription2" },
+        { "id":"inputS2-3-1", "db-table-name":"workexperience", "db-item-name":"workStartDate3" },
+        { "id":"inputS2-3-2", "db-table-name":"workexperience", "db-item-name":"workEndDate3" },
+        { "id":"inputS2-3-3", "db-table-name":"workexperience", "db-item-name":"company3" },
+        { "id":"inputS2-3-4", "db-table-name":"workexperience", "db-item-name":"jobDescription3" },
+
+        { "id":"inputS3-1-1", "db-table-name":"education", "db-item-name":"eduStartDate1" },
+        { "id":"inputS3-1-2", "db-table-name":"education", "db-item-name":"eduEndDate1" },
+        { "id":"inputS3-1-3", "db-table-name":"education", "db-item-name":"schoolDate1" },
+        { "id":"inputS3-1-4", "db-table-name":"education", "db-item-name":"education1" },
+        { "id":"inputS3-2-1", "db-table-name":"education", "db-item-name":"eduStartDate2" },
+        { "id":"inputS3-2-2", "db-table-name":"education", "db-item-name":"eduEndDate2" },
+        { "id":"inputS3-2-3", "db-table-name":"education", "db-item-name":"schoolDate2" },
+        { "id":"inputS3-2-4", "db-table-name":"education", "db-item-name":"education2" },
+        { "id":"inputS3-3-1", "db-table-name":"education", "db-item-name":"eduStartDate3" },
+        { "id":"inputS3-3-2", "db-table-name":"education", "db-item-name":"eduEndDate3" },
+        { "id":"inputS3-3-3", "db-table-name":"education", "db-item-name":"schoolDate3" },
+        { "id":"inputS3-3-4", "db-table-name":"education", "db-item-name":"education3" },
+
+        { "id":"inputS5-1", "db-table-name":"workflow", "db-item-name":"title" },
+        { "id":"inputS5-2", "db-table-name":"workflow", "db-item-name":"text" },
+
+        { "id":"inputS6-1-1", "db-table-name":"projects", "db-item-name":"projectName1" },
+        { "id":"inputS6-2-1", "db-table-name":"projects", "db-item-name":"projectName2" },
+        { "id":"inputS6-1-2", "db-table-name":"projects", "db-item-name":"projectIMG1" },
+        { "id":"inputS6-2-2", "db-table-name":"projects", "db-item-name":"projectIMG2" },
+
+        { "id":"inputS7-1", "db-table-name":"hobbies", "db-item-name":"hobbyName1" },
+        { "id":"inputS7-2", "db-table-name":"hobbies", "db-item-name":"hobbyName2" },
+        { "id":"inputS7-3", "db-table-name":"hobbies", "db-item-name":"hobbyName3" },
+
+        { "id":"inputS8-1", "db-table-name":"links", "db-item-name":"link1" },
+        { "id":"inputS8-2", "db-table-name":"links", "db-item-name":"link2" },
+        { "id":"inputS8-3", "db-table-name":"links", "db-item-name":"link3" }
+    ]
+} 
